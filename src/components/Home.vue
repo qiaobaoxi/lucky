@@ -14,10 +14,10 @@
         </ul>
         <div class="languase">
           <input type="radio" name="lan" id="English" checked>
-          <label for="English">English</label>
+          <label for="English" @click="switchLanguage(0)" v-html="$t('message.languangeEn')">English</label>
           <em></em>
           <input type="radio" name="lan" id="chinese">
-          <label for="chinese">chinese</label>
+          <label for="chinese"  @click="switchLanguage(1)" v-html="$t('message.languangeCn')">chinese</label>
         </div>
       </div>
     </div>
@@ -46,9 +46,9 @@ export default {
         require("../assets/scrollChart3.png")
       ],
       menus:[
-        "Home",
-        "White Paper",
-        "News"
+        this.$t('message.home'),
+        this.$t('message.whitePaper'),
+        this.$t('message.newsTitle')
       ],
       selectLan:0
     }
@@ -59,6 +59,15 @@ export default {
     show(){
       
     },
+    switchLanguage(n){
+      this.$i18n.locale = n===0?'en':"cn"
+      this.$set(this.menus,0,this.$t('message.home'));
+      this.$set(this.menus,1,this.$t('message.whitePaper'));
+      this.$set(this.menus,2,this.$t('message.newsTitle'));
+    }
+  },
+  watch:{
+   
   }
 }
 </script>
