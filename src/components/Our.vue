@@ -1,9 +1,9 @@
 <template>
   <section>
     <div class="wrap">
-      <team></team>
+      <team id="team"></team>
       <consultants></Consultants>
-      <companies></companies>
+      <companies id="companies"></companies>
     </div>
   </section>
 </template>

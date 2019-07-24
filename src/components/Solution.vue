@@ -7,7 +7,7 @@
       <vline></vline>
       <div class="layer">
           <div class="layerLeft">
-            <img src="../assets/layerLeft.png" alt="" srcset=""/>
+            <img v-lazy="require('../assets/layerLeft.png')" alt="" srcset=""/>
             <div class="title">
               <h5 v-html="$t('message.softwareLayer')">Software Layer</h5>
               <p v-html="$t('message.softwareLayerIntroduction')">
@@ -16,7 +16,7 @@
             </div>
           </div>
           <div class="layerRight">
-            <img src="../assets/layerRight.png" alt="" srcset=""/>
+            <img v-lazy="require('../assets/layerRight.png')" alt="" srcset=""/>
             <div class="title">
               <h5 v-html="$t('message.hardwareLaver')">Hardware Laver</h5>
               <p v-html="$t('message.hardwareLaverIntroduction')">
@@ -26,7 +26,7 @@
           </div>
       </div>
       <ol>
-        <li><img src="../assets/point.png"><span v-html="$t('message.overallSolution')">Combined with block chain technology, The unique design of hardware and software in the process of anti-counterfeiting will create</span></li>
+        <li><img v-lazy="require('../assets/point.png')"><span v-html="$t('message.overallSolution')">Combined with block chain technology, The unique design of hardware and software in the process of anti-counterfeiting will create</span></li>
       </ol>
     </div>
   </section>
@@ -71,9 +71,9 @@ export default {
       .layer{
         margin-top: 80px;
         display: flex;
-        flex: 1;
         .layerLeft,.layerRight{
           display: flex;
+          flex: 1;
           img{
             margin-right: 30px;
             width: 92px;
@@ -84,6 +84,7 @@ export default {
             color:#1bdeb8;
           }
           p{
+            padding-right: 10px;
             margin-top: 18px;
             line-height: 32px;
             font-size: 18px;

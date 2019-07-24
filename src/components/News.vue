@@ -5,24 +5,26 @@
       <vline></vline>
       <div class="box">
           <ul>
-            <li v-for="item in newsDaa">
+            <li v-for="item in newsData" @click="toNewsDes(item.id)">
               <a>
                 <div class="title">
-                  <span></span><h2>{{item.title}}</h2><em>{{item.date}}</em>
+                  <span></span><h2>{{item.headline}}</h2><em>{{item.time.substring(5,10)}}</em>
                 </div>  
                 <div class="contect">
-                  <p>{{item.contect}}</p><img class="img" src="../assets/newsArrow.png" alt="" srcset="">
+                  <p>{{item.subtitle}}</p><img class="img" v-lazy="require('../assets/newsArrow.png')" alt="" srcset="">
                 </div> 
               </a>
             </li>
           </ul>
           <div class="pageWrap">
               <el-pagination
-                class="page"
-                background
-                layout="prev, pager, next"
-                :total="newsDaa.length">
-              </el-pagination> 
+              class="page"
+            background
+            layout="prev, pager, next"
+            @current-change="pageChange"
+            :page-size="10"
+            :total="total">
+            </el-pagination> 
           </div>
       </div> 
     </div>
@@ -35,33 +37,30 @@ export default {
   name: 'Home',
   data(){
     return{
-        newsDaa:[
-          {
-            title:"Or send us email",
-            contect:"Shandong university,majoring in biological engineering Dessert Zhendong pharmaceutical Co",
-            date:"6-27",
-            link:""
-          },
-          {
-            title:"Or send us email",
-            contect:"Shandong university,majoring in biological engineering Dessert Zhendong pharmaceutical Co",
-            date:"6-27",
-            link:""
-          },
-          {
-            title:"Or send us email",
-            contect:"Shandong university,majoring in biological engineering Dessert Zhendong pharmaceutical Co",
-            date:"6-27",
-            link:""
-          }
-        ]
+        newsData:[
+        ],
+        nowPage:1,
+        total:0
     }
   },
   mounted() {
+     this.init();
   },
   methods:{
-    show(){
-      
+    init(){
+       this.axios.get("/api/getNewsList?page="+this.nowPage).then((res)=>{
+         let data=res.data;
+         if(data.code){
+            this.newsData=data.result;
+         }
+       })
+    },
+    toNewsDes(id){
+      this.$router.push({path: '/news?id=' +id})
+    },
+    pageChange(page){
+            this.init(page);
+            this.nowPage=page;
     },
   },
   components:{
@@ -104,6 +103,9 @@ export default {
             h2{
               font-size: 28px;
               width: 420px;
+              overflow: hidden;
+              text-overflow:ellipsis;
+              white-space: nowrap;
             }
             em{
               margin-left: 24px;
@@ -141,9 +143,9 @@ export default {
       .pageWrap{
         padding: 10px 76px;
         text-align: center;
-        // .page{
-        //   button{background-color: #1bdeb8;}
-        // }
+        .page{
+          button{background-color: #1bdeb8 !important;}
+        }
       }
     }
 </style>

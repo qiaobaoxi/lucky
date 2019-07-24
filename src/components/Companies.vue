@@ -7,25 +7,31 @@
       <vline></vline>
       <ul>
           <li>
-             <img src="../assets/jiafucheng.png" alt="">
+             <img v-lazy="require('../assets/jiafucheng.png')" alt="">
              <p v-html="$t('message.jiafucheng')">
                Founded in May 2004, is a professional global asset management institution with the main business: asset management, wealth management and investment banking.
              </p>  
           </li>
           <li>
-             <img src="../assets/qingchenziben.png" alt="">
+             <img v-lazy="require('../assets/qingchenziben.png')" alt="">
              <p v-html="$t('message.qingchenziben')">
                Morning Capital concentrates on the traditional investment banking business, includesb listing, financing, merging and OTC market etc.
              </p>  
           </li>
           <li>
-             <img src="../assets/zhongxiangjituan.png" alt="">
+             <img v-lazy="require('../assets/zhongxiangjituan.png')" alt="">
+             <p v-html="$t('message.haichuanghui')">
+               Founded in 2011, the company s business scope includes real estate development and management; Property management; Cleaning service, etc
+             </p>  
+          </li>
+          <li>
+             <img v-lazy="require('../assets/zhongxiangjituan.png')" alt="">
              <p v-html="$t('message.zhongxiangjituan')">
                Founded in 2011, the company s business scope includes real estate development and management; Property management; Cleaning service, etc
              </p>  
           </li>
           <li>
-             <img src="../assets/genyuanziben.png" alt="">
+             <img v-lazy="require('../assets/genyuanziben.png')" alt="">
              <p v-html="$t('message.genyuanziben')">
                Founded in May 2004, is a professional global asset management institution with the main business: asset management, wealth management and investment banking.
              </p>  
@@ -33,19 +39,19 @@
       </ul>
       <ol>
           <li>
-             <img src="../assets/school1.png" alt="">
+             <img v-lazy="require('../assets/school1.png')" alt="">
           </li>
            <li>
-             <img src="../assets/school4.png" alt="">
+             <img v-lazy="require('../assets/school4.png')" alt="">
           </li>
            <li>
-             <img src="../assets/school5.png" alt="">
+             <img v-lazy="require('../assets/school5.png')" alt="">
           </li>
            <li>
-             <img src="../assets/school2.png" alt="">
+             <img v-lazy="require('../assets/school2.png')" alt="">
           </li>
            <li>
-             <img src="../assets/school3.png" alt="">
+             <img v-lazy="require('../assets/school3.png')" alt="">
           </li>
       </ol>
     </div>

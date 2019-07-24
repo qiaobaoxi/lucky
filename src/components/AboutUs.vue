@@ -3,15 +3,15 @@
     <div class="left">
       <h1  v-html="$t('message.aboutUs')">ABOUT US</h1>
       <vline></vline>
-      <h2 v-html="$t('message.aboutUs')">DOUBLE LUCKY BIOPHARMACEUTICAL LTD</h2>
+      <h2 >DOUBLE LUCKY BIOPHARMACEUTICAL LTD</h2>
       <h3 v-html="$t('message.conpany')">AN AMERICAN BIOPHARMACEUTICAL TECHNOLOGY TECHNOLOGY COMPANY</h3>
       <p v-html="$t('message.originator')">The initiator of the Dlucky Chain project, the company tookcontrol of a pharmaceutical company in mainland China inOctober 2018.</p>
-      <p v-html="$t('message.des')">(mainly engaged in the research and development and production of periplaneta Americana products)Taking this pharmaceutical company as the first applicationscenario, start the research and development of block chain.traceability technology combined with production equipmentand production line.</p>
+      <!-- <p v-html="$t('message.des')">(mainly engaged in the research and development and production of periplaneta Americana products)Taking this pharmaceutical company as the first applicationscenario, start the research and development of block chain.traceability technology combined with production equipmentand production line.</p> -->
     </div>
     <div class="right">
       <el-carousel height="466px" class="carousel">
         <el-carousel-item v-for="item in scrollChart" >
-          <img :src="item" alt="" >
+          <img v-lazy="item" alt="" >
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -25,12 +25,15 @@ export default {
   data(){
     return{
       scrollChart:[
-        require("../assets/scrollChart1.png"),
-        require("../assets/scrollChart2.png"),
+        require("../assets/aboutUs1.jpg"),
+        require("../assets/aboutUs2.jpg"),
+        require("../assets/aboutUs3.jpg"),
+        require("../assets/aboutUs4.jpg"),
       ],
     }
   },
   mounted() {
+    window.addEventListener('scroll', this.show, true);
   },
   methods:{
     show(){

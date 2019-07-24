@@ -5,6 +5,7 @@
       Scenario of Dlucky Chain
     </header>
     <vline></vline>
+    <!-- <canvas ref="canvas10" width="1200" height="600"></canvas> -->
     <canvas ref="canvas" width="1200" height="600"></canvas>
     <canvas ref="canvas1" width="1200" height="600"></canvas>
     <canvas ref="canvas3" width="1200" height="600"></canvas>
@@ -29,9 +30,9 @@ export default {
             y:12,
             w:120,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
-            text:"Raw Material",
+            text:this.$t('message.rawmaterial'),
             textC:"white"
           },
           {
@@ -39,9 +40,9 @@ export default {
             y:10,
             w:120,
             h:50,
-            c:"rgb(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
-            text:"Raw Material",
+            text:this.$t('message.rawmaterial'),
             textC:"white"
           }
           ],
@@ -50,9 +51,9 @@ export default {
             y:12,
             w:120,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
-            text:"Treatmen",
+            text:this.$t('message.treatmen'),
             textC:"white"
           },
           {
@@ -60,9 +61,9 @@ export default {
             y:10,
             w:120,
             h:50,
-            c:"rgb(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
-            text:"Treatmen",
+            text:this.$t('message.treatmen'),
             textC:"white"
           }
           ],
@@ -71,9 +72,9 @@ export default {
             y:12,
             w:120,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
-            text:"Sterilization",
+            text:this.$t('message.sterilization'),
             textC:"white"
           },
           {
@@ -81,9 +82,9 @@ export default {
             y:10,
             w:120,
             h:50,
-            c:"rgb(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
-            text:"Sterilization",
+            text:this.$t('message.sterilization'),
             textC:"white"
           }
           ],
@@ -92,9 +93,9 @@ export default {
             y:12,
             w:120,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
-            text:"D-grade \n Purification",
+            text:this.$t('message.purification'),
             textC:"white"
           },
           {
@@ -102,9 +103,9 @@ export default {
             y:10,
             w:120,
             h:50,
-            c:"rgb(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
-            text:"D-grade \n Purification",
+            text:this.$t('message.purification'),
             textC:"white"
           }
           ],
@@ -113,9 +114,9 @@ export default {
             y:12,
             w:120,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
-            text:"Internal \n packaging",
+            text:this.$t('message.internal'),
             textC:"white"
           },
           {
@@ -123,9 +124,9 @@ export default {
             y:10,
             w:120,
             h:50,
-            c:"rgb(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
-            text:"Internal \n packaging",
+            text:this.$t('message.internal'),
             textC:"white"
           }
           ],
@@ -134,9 +135,9 @@ export default {
             y:12,
             w:120,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
-            text:"Outside \n packaging",
+            text:this.$t('message.outSide'),
             textC:"white"
           },
           {
@@ -144,9 +145,9 @@ export default {
             y:10,
             w:120,
             h:50,
-            c:"rgb(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
-            text:"Outside \n packaging",
+            text:this.$t('message.outSide'),
             textC:"white"
           }
           ],
@@ -155,9 +156,9 @@ export default {
             y:8,
             w:134,
             h:76,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
-            text:"Final product",
+            text:this.$t('message.finalProduct'),
             textC:"white"
           },
           {
@@ -165,9 +166,9 @@ export default {
             y:6,
             w:134,
             h:76,
-            c:"rgb(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
-            text:"Final product",
+            text:this.$t('message.finalProduct'),
             textC:"white"
           }
           ],
@@ -177,7 +178,7 @@ export default {
             y:214,
             w:420,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
             text:"D-Eye",
             textC:"white"
@@ -187,18 +188,18 @@ export default {
             y:212,
             w:420,
             h:50,
-            c:"rgba(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
             text:"D-Eye",
             textC:"white"
-          },
+          }
           ],
           DCode:[{
             x:1202,
             y:214,
             w:172,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
             text:"D-Code",
             textC:"white"
@@ -208,20 +209,20 @@ export default {
             y:212,
             w:172,
             h:50,
-            c:"rgba(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
             text:"D-Code",
             textC:"white"
-          },
+          }
           ],
           DluckyChain:[{
             x:726,
             y:382,
             w:420,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
-            text:"dlucky chain",
+            text:this.$t('message.dluckyChain'),
             textC:"white"
           },
           {
@@ -229,18 +230,18 @@ export default {
             y:380,
             w:420,
             h:50,
-            c:"rgba(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
-            text:"dlucky chain",
+            text:this.$t('message.dluckyChain'),
             textC:"white"
-          },
-          ],
+          }
+        ],
           DTag:[{
             x:1200,
             y:382,
             w:174,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
             text:"D-Tag",
             textC:"white"
@@ -250,7 +251,7 @@ export default {
             y:380,
             w:174,
             h:50,
-            c:"rgba(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
             text:"D-Tag",
             textC:"white"
@@ -261,9 +262,9 @@ export default {
             y:470,
             w:174,
             h:50,
-            c:"rgba(27, 222, 184)",
+            c:"rgba(27, 222, 184,1)",
             r:5,
-            text:"Users",
+            text:this.$t('message.users'),
             textC:"white"
           },
           {
@@ -271,12 +272,12 @@ export default {
             y:470,
             w:174,
             h:50,
-            c:"rgba(39,44,65)",
+            c:"rgba(39,44,65,1)",
             r:5,
-            text:"Users",
+            text:this.$t('message.users'),
             textC:"white"
           }
-          ],
+        ],
        DEyeArrow:[],
        DCodeArrow:{
           x:726,
@@ -342,7 +343,7 @@ export default {
          strokeColor:"#1bdeb8",
          c:"white",
          r:15,
-         text:"Input data",
+         text:this.$t('message.inputdData'),
          textC:"#000000"
        },
        {
@@ -353,7 +354,7 @@ export default {
          strokeColor:"#1bdeb8",
          c:"white",
          r:15,
-         text:"Application code and query \n code Cache to DCode",
+         text:this.$t('message.application'),
          textC:"#000000"
        },
        {
@@ -364,7 +365,7 @@ export default {
          strokeColor:"#1bdeb8",
          c:"white",
          r:15,
-         text:"Encoding (Printing)",
+         text:this.$t('message.encoding'),
          textC:"#000000"
        },
        {
@@ -375,7 +376,7 @@ export default {
          strokeColor:"#1bdeb8",
          c:"white",
          r:15,
-         text:"Upload data",
+         text:this.$t('message.uploadData'),
          textC:"#000000"
        },
        {
@@ -386,46 +387,75 @@ export default {
          strokeColor:"#1bdeb8",
          c:"white",
          r:15,
-         text:"Return application code \n And query code",
+         text:this.$t('message.returnCode'),
          textC:"#000000"
        }
        ],
+       backgroundArcData:[],
+       //0表示未进入1表示进入
+       inputDataMouseSign:0
      }
   },
   mounted() {
-    //输入框
     this.inputData();
+    // this.animateBackground();
+    //输入框
   },
   computed:{
    a(){
-      return this.$t('message.home');
+      return this.$t('message.menuHome');
    }
   },
   methods:{
+    animateBackground(){
+        this.canvas = this.$refs["canvas10"];//指定canvas
+        let ctx = this.canvas.getContext("2d");
+        window.setInterval(() => {
+          ctx.clearRect(0,0,1200,600);
+          this.backgroundArcData.push({
+            x:Math.random()*1200,y:Math.random()*600,radius:0,start:0,r:27,g:222,b:184,a:1,
+          })
+          for(let i=0;i<this.backgroundArcData.length;i++){
+            let radius=this.backgroundArcData[i].radius++;
+            this.backgroundArcData[i].a=(this.backgroundArcData[i].a*100-100/50)/100
+            if(radius>=50){
+              this.backgroundArcData.splice(i,1);
+              continue;
+            }
+            this.addArc(ctx,this.backgroundArcData[i].x,this.backgroundArcData[i].y,radius,0,this.backgroundArcData[i].r,this.backgroundArcData[i].g,this.backgroundArcData[i].b,this.backgroundArcData[i].a)
+          }
+        }, 40);
+    },
+    addArc(ctx,x,y,radius,start,r,g,b,a){
+      ctx.beginPath();
+      ctx.arc(x,y,radius,start,2*Math.PI);
+      ctx.fillStyle=`rgba(${r},${g},${b},${a})`
+      ctx.fill();
+    }, 
     inputData(){
       this.translate("canvas",80,40,this.showTranslate)
     },
     translate(obj,times,startTime,fn){
       this.canvas = this.$refs[`${obj}`];//指定canvas
       let ctx = this.canvas.getContext("2d");//设置2D渲染区域
-      for(let j=startTime;j<times;j++){
+      //录入数据之前模块事件
+      this.canvas.addEventListener('mousemove', (ev)=>{
+        this.inputDataMouseMove(ev,ctx,times,startTime)
+      }, false);
+      this.run(ctx,times,startTime,fn)
+    },
+    run(ctx,times,startTime,fn){
+       for(let j=startTime;j<times;j++){
         setTimeout(()=>{
           fn(ctx,times,j)
         },j*12)
-      }
+      } 
     },
     //输入框动画
     showTranslate(ctx,num,k){
         let dataRect=this.dataRect
         ctx.clearRect(0,0,1200,600);
-        for(let i=0;i<dataRect.length;i++){
-          for(let j=0;j<dataRect[i].length;j++){
-            //渲染方框
-            this.redenRect(ctx,(dataRect[i][j].x+i*177)*(k/num),dataRect[i][j].y*(k/num),dataRect[i][j].w,dataRect[i][j].h,dataRect[i][j].c,dataRect[i][j].r,dataRect[i][j].text)
-          }
-          //渲染文字
-          this.redenText(ctx,dataRect[i][0].x+i*177*(k/num),dataRect[i][0].y*(k/num),dataRect[i][0].w,dataRect[i][0].h,dataRect[i][0].textC,dataRect[i][0].r,dataRect[i][0].text)
-        }
+        this.crateDataSource(ctx,dataRect,num,k)
         for(let i=0;i<(dataRect.length-1);i++){
           let arrow=dataRect[i][0].x+i*177+128
           this.redenArrow(ctx, arrow*(k/num), (dataRect[i][0].y+dataRect[i][0].h/2)*(k/num),(arrow+40)*(k/num),(dataRect[i][0].y+dataRect[i][0].h/2)*(k/num),30,20,1,'#2e2e2e');
@@ -433,6 +463,38 @@ export default {
         if(k===num-1){
           this.translate("canvas1",80,40,this.inputArrow)
         }
+    },
+    //录入数据之前模块事件
+    inputDataMouseMove(ev,ctx,num,k){
+      let dataRect=this.dataRect;
+      for(let i=0;i<dataRect.length;i++){
+          for(let j=0;j<dataRect[i].length;j++){
+            //渲染方框
+            if(ev.layerX>(dataRect[i][j].x+i*177)&&ev.layerX<((dataRect[i][j].x+i*177)+dataRect[i][j].w)&&ev.layerY>dataRect[i][j].y&&ev.layerY<(dataRect[i][j].y+dataRect[i][j].h)){
+              if(this.inputDataMouseSign===0){
+                  this.dataRect[i][0].w=470;
+                  this.dataRect[i][0].h=100;
+                   this.dataRect[i][1].w=470;
+                  this.dataRect[i][1].h=100;
+                  this.run(ctx,num,k,this.showTranslate)
+                  this.inputDataMouseSign=1
+              }
+            }
+          }
+          //渲染文字
+          // this.redenText(ctx,dataRect[i][0].x+i*177*(k/num),dataRect[i][0].y*(k/num),dataRect[i][0].w,dataRect[i][0].h,dataRect[i][0].textC,dataRect[i][0].r,dataRect[i][0].text)
+      }
+    },
+    //录入数据之前模块生成
+    crateDataSource(ctx,dataRect,num,k){
+      for(let i=0;i<dataRect.length;i++){
+          for(let j=0;j<dataRect[i].length;j++){
+            //渲染方框
+            this.redenRect(ctx,(dataRect[i][j].x+i*177)*(k/num),dataRect[i][j].y*(k/num),dataRect[i][j].w,dataRect[i][j].h,dataRect[i][j].c,dataRect[i][j].r,dataRect[i][j].text)
+          }
+          //渲染文字
+          this.redenText(ctx,dataRect[i][0].x+i*177*(k/num),dataRect[i][0].y*(k/num),dataRect[i][0].w,dataRect[i][0].h,dataRect[i][0].textC,dataRect[i][0].r,dataRect[i][0].text)
+      }
     },
     //输入箭头
     inputArrow(ctx,num,k){
@@ -518,7 +580,7 @@ export default {
         for(let i=0;i<this.DEyeArrow.length;i++){
           let tox = this.DEyeArrow[i].endx;
           let toy=-50*(k/num)+this.DEyeArrow[i].endy+50
-          this.redenArrow1(ctx, 0, 0,Math.trunc(tox),Math.trunc(toy),30,15,1,'rgba(27, 222, 184)',this.DEyeArrow[i].r);
+          this.redenArrow1(ctx, 0, 0,Math.trunc(tox),Math.trunc(toy),30,15,1,'rgba(27, 222, 184,1)',this.DEyeArrow[i].r);
           if(k===num/2){
             this.translate("canvas4",80,40,this.Code)
             this.translate("canvas6",80,40,this.dluckyChain)
@@ -539,7 +601,6 @@ export default {
             this.redenRect(ctx,endx,endy,this.DCode[i].w,this.DCode[i].h,this.DCode[i].c,this.DCode[i].r,this.DCode[i].text)
             this.redenText(ctx,endx,endy,this.DCode[i].w,this.DCode[i].h,this.DCode[i].textC,this.DCode[i].r,this.DCode[i].text)
       }
-      
       let fromx =50*(k/num)+this.DCodeArrow.x-50;
       let fromy=this.DCodeArrow.y+this.DCode[0].h/2
       this.redenArrow(ctx, fromx, fromy,Math.trunc(fromx+this.DCodeArrow.w),Math.trunc(fromy),30,15,this.DCodeArrow.h,this.DCodeArrow.c);
@@ -636,11 +697,11 @@ export default {
         ctx.arc(w - radius + x, h - radius + y, radius, 0, Math.PI * 1 / 2);   
         ctx.lineTo(radius + x, h +y);   
         ctx.arc(radius + x, h - radius + y, radius, Math.PI * 1 / 2, Math.PI);
+        ctx.closePath(); 
         ctx.lineWidth  = 2 ;
         ctx.strokeStyle =strokeColor;
-        ctx.closePath(); 
-        ctx.stroke();
         ctx.fillStyle=c1;
+        ctx.stroke();
         ctx.fill()
     },
     //画文字
@@ -654,7 +715,7 @@ export default {
             }else{
               y1=y+h/2+4
             }
-            ctx.font="16px Georgia";
+            ctx.font="14px Arial";
             x1=(w-ctx.measureText(txt[i]).width)/2+x;
             ctx.beginPath();
             ctx.textBaseline="center";
@@ -905,27 +966,6 @@ export default {
             textC:"white"
           },
         ]
-        this.DluckyChain=[{
-            x:726,
-            y:382,
-            w:420,
-            h:50,
-            c:"rgba(27, 222, 184)",
-            r:5,
-            text:this.$t('message.dluckyChain'),
-            textC:"white"
-          },
-          {
-            x:724,
-            y:380,
-            w:420,
-            h:50,
-            c:"rgba(39,44,65)",
-            r:5,
-            text:this.$t('message.dluckyChain'),
-            textC:"white"
-          },
-        ]
         this.UsersData=[{
             x:1200,
             y:470,
@@ -1002,7 +1042,7 @@ export default {
          text:this.$t('message.returnCode'),
          textC:"#000000"
        }
-       ],
+       ]
         this.inputData();
     }
   }  

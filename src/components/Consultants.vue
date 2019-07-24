@@ -1,13 +1,13 @@
 <template>
   <section>
-      <h1>
-        <img src="../assets/squre.png"><span v-html="$t('message.consultants')">CONSULTANTS</span>
+      <h1  :class="isWdith?'width':'width1'">
+        <img v-lazy="require('../assets/squre.png')"><span v-html="$t('message.consultants')">CONSULTANTS</span>
       </h1>
        <ul>
         <li>
           <div class="content">
              <div class="contentWRap">
-               <img src="../assets/taoran.png">
+               <img v-lazy="require('../assets/taoran.png')">
                <p v-html="$t('message.taoran')">Member of the united Nations international academy of ecological and life safety Specialist of army general hospital
 Deputy director, department of clinical
 psychology, capital medical university
@@ -16,7 +16,7 @@ Director of Beijing shijian united medical</p>
           </div>
           <div class="content">
              <div class="contentWRap">
-               <img src="../assets/taokai.png">
+               <img v-lazy="require('../assets/taokai.png')">
                <p v-html="$t('message.taokai')">State experts in traditional chinese medicine Chief physician of pulmonary department,affiliated hospital of shandong university of traditional chinese medicine Professor, department of internal medicine, shandong university of traditional Chinese medicine</p>
              </div>       
           </div>
@@ -31,7 +31,13 @@ export default {
   name: 'Home',
   data(){
     return{
+      isWdith:true
     }
+  },
+  computed:{
+   a(){
+      return this.$t('message.menuHome');
+   }
   },
   mounted() {
   },
@@ -43,11 +49,22 @@ export default {
   components:{
     Vline
   },
+  watch:{
+    a(){
+       this.isWdith=!this.isWdith
+    }
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+      .width{
+        width: 430px;
+      }
+      .width1{
+        width: 240px;
+      }
       h1{
         position: relative;
         width: 430px;

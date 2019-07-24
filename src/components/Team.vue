@@ -1,26 +1,26 @@
 <template>
   <section>
     <div class="wrap">
-      <h1>
-        <img src="../assets/squre.png"><span v-html="$t('message.ourTeam')">OUR TEAM</span>
+      <h1 :class="isWdith?'width':'width1'">
+        <img v-lazy="require('../assets/squre.png')"><span v-html="$t('message.ourTeam')">OUR TEAM</span>
       </h1>
       <ul>
         <li>
           <div class="content">
              <div class="contentWRap">
-               <img src="../assets/CEO.png">
+               <img v-lazy="isWdith?require('../assets/CEO.png'):require('../assets/CEO.jpg')">
                <p v-html="$t('message.ceo')">Major in pharmaceutical Chemistry.Beijing University of Traditional Chinese Medicine MBA from Renmin University of China.Zhejiang Guoguang Biopharmaceutical co LTD.General Manager of Health Group Industry Corporation</p>
              </div>       
           </div>
           <div class="content">
              <div class="contentWRap">
-               <img src="../assets/COO.png">
+               <img v-lazy="isWdith?require('../assets/COO.png'):require('../assets/COO.jpg')">
                <p v-html="$t('message.coo')">Renmin university of China management MBA.Hubei xianning medical college pharmacy major Qingdao sanli chemical technology Co, LTD Inspection engineer</p>
              </div>       
           </div>
           <div class="content">
              <div class="contentWRap">
-               <img src="../assets/CTO.png">
+               <img v-lazy="require('../assets/CTO.png')">
                <p v-html="$t('message.cto')">CTO of DLucky Pharmaceutical R&D at Digital Stock Exchange Founder at Syndicate Group</p>
              </div>       
           </div>
@@ -28,13 +28,13 @@
         <li>
           <div class="content">
              <div class="contentWRap">
-               <img src="../assets/CMO.png">
+               <img v-lazy="isWdith?require('../assets/CMO.png'):require('../assets/CMO.jpg')">
                <p v-html="$t('message.cmo')">Shandong university, majoring in biological engineering Dessert Zhendong pharmaceutical Co, Ltd Sales director for multiple companies</p>
              </div>       
           </div>
           <div class="content">
              <div class="contentWRap">
-               <img src="../assets/CIO.png">
+               <img v-lazy="isWdith?require('../assets/CIO.png'):require('../assets/CIO.jpg')">
                <p v-html="$t('message.cio')">Heilongjiang university of traditional Chinese medicine, majoring in traditional Chinese medicine Kang yuan pharmaceutical research institute deputy director We completed several major science
 technology projects</p>
              </div>       
@@ -52,7 +52,13 @@ export default {
   name: 'Home',
   data(){
     return{
+      isWdith:true
     }
+  },
+  computed:{
+   a(){
+      return this.$t('message.menuHome');
+   }
   },
   mounted() {
   },
@@ -64,6 +70,11 @@ export default {
   components:{
     Vline
   },
+  watch:{
+    a(){
+       this.isWdith=!this.isWdith
+    }
+  }
 }
 </script>
 
@@ -71,6 +82,12 @@ export default {
 <style scoped lang="less">
     section{
       overflow: hidden;
+      .width{
+        width: 312px;
+      }
+      .width1{
+        width: 240px;
+      }
       h1{
         position: relative;
         width: 312px;

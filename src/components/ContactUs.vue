@@ -12,24 +12,24 @@
               </h4>
               <ol>
                 <li>
-                  <img class="icon" src="../assets/twitter.png" alt="">
-                  <img class="code" src="../assets/twitterCode.png" alt="../assets/twitterCode.png">
+                  <img class="icon" v-lazy="require('../assets/twitter.png')" alt="">
+                  <img class="code" v-lazy="require('../assets/twitterCode.png')" alt="../assets/twitterCode.png">
                 </li>
                 <li>
-                  <img class="icon" src="../assets/telegram.png" alt="">
-                  <img class="code" src="../assets/twitterCode.png" alt="../assets/twitterCode.png">
+                  <img class="icon" v-lazy="require('../assets/telegram.png')" alt="">
+                  <img class="code" v-lazy="require('../assets/telegramCode.png')" alt="../assets/telegramCode.png">
                 </li>
                 <li>
-                  <img class="icon" src="../assets/github.png" alt="">
-                  <img class="code" src="../assets/twitterCode.png" alt="../assets/twitterCode.png">
+                  <img class="icon" v-lazy="require('../assets/github.png')" alt="">
+                  <img class="code" v-lazy="require('../assets/githubCode.jpg')" alt="../assets/githubCode.jpg">
                 </li>
                 <li>
-                  <img class="icon" src="../assets/in.png" alt="">
-                  <img class="code" src="../assets/twitterCode.png" alt="../assets/twitterCode.png">
+                  <img class="icon" v-lazy="require('../assets/in.png')" alt="">
+                  <img class="code" v-lazy="require('../assets/inCode.png')" alt="../assets/inCode.png">
                 </li>
                 <li>
-                  <img class="icon" src="../assets/fire.png" alt="">
-                  <img class="code" src="../assets/twitterCode.png" alt="../assets/twitterCode.png">
+                  <img class="icon" v-lazy="require('../assets/fire.png')" alt="">
+                  <img class="code" v-lazy="require('../assets/fireCode.png')" alt="../assets/fireCode.png">
                 </li>
               </ol>
             </li>
@@ -52,7 +52,7 @@
              <div class="line"></div>
              <div class="customerService">
                 <div class="customerServiceIcon">
-                  <img src="../assets/customerService.png" alt="" srcset="">
+                  <img v-lazy="require('../assets/customerService.png')" alt="" srcset="">
                   <h5 v-html="$t('message.customerService')">CUSTOMER SERVICE</h5>
                 </div>
              </div>
@@ -167,16 +167,16 @@ export default {
             .code{
               position: absolute;
               top: 0;
-              left: 0;
-              width: 62px;
-              height: 62px;
+              left: -18px;
+              width: 100px;
+              height: 100px;
               transition: 1s;
               opacity: 0;
             }
           }
           li:hover .code{
             opacity: 1;
-            top: -70px;
+            top: -110px;
           }
           li:nth-of-type(1){
             .icon{

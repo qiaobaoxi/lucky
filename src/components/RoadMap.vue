@@ -14,7 +14,7 @@
                   </li>
                 </ol>
                 <ol class="list1">
-                  <li v-for="month in year" :class="month.num===0?'border month':'border1 month1'" class="animateYear1">
+                  <li v-for="month in year" :class="[`border${month.num}`,`month${month.num}`]" class="animateYear1">
                     <p class="animateYear2" :class="month.num===0?'month':'month1'">{{month.content}}</p>
                     <span class="point"></span>
                   </li>
@@ -54,6 +54,11 @@ export default {
   },
   methods:{
     init(){
+        this.num=0,
+        this.scrollNum=0,
+        this.wNum=6,
+        this.scrollDistance=0,
+        this.roadMapData=[];
         let roadMapData=[
                 {
                 2017:[{
@@ -135,6 +140,11 @@ export default {
         this.contrast(roadMapData);
     },
     contrast(roadMapData){
+      console.log("road")
+        let startScrollNum=[];
+        //不分组的路线的数据
+        let roadMapArr=[];
+        let sign=0;
         for(let i=0;i<roadMapData.length;i++){
             for(let key in roadMapData[i]){
                 let data=roadMapData[i][key].sort((a,b)=>{
@@ -147,17 +157,27 @@ export default {
                    }
                 });
                 let newData=data.map((item)=>{
+                  roadMapArr.push(item);
+                  if(sign===0){
+                    startScrollNum.push(item);
+                  }
                   this.num++;
                   let nowDate = new Date();
-                  let now = new Date(nowDate.getFullYear()+'-'+nowDate.getMonth());
-                  let contrastTime = new Date(key+'-'+(item.month+1));
+                  var time = (nowDate.getFullYear()+'/'+nowDate.getMonth()+'/'+'00').split(/[- : \/]/);
+                  let now = new Date(time[0], time[1], time[2]);
+                  var time1 = (key+'/'+(item.month+1)+'/'+'00').split(/[- : \/]/);
+                  let contrastTime = new Date(time1[0], time1[1], time1[2]);
                   if(now.getTime()>contrastTime.getTime()){
                     // item.border="2px solid #a6a6a6"
                     item.num=0
-                    
                   }else{
                     // item.border="2px solid #323232"
-                    item.num=1
+                    if(sign===0){
+                      item.num=2
+                      sign++
+                    }else{
+                      item.num=1
+                    }
                   }
                   item.month=this.engMonth[item.month];
                   return item;
@@ -167,6 +187,17 @@ export default {
         }
       }
       this.scrollNum=this.num-this.wNum;
+      let ul=this.$refs.ul;
+      let n=0
+      if(startScrollNum.length-2<0){
+        n=0
+      }else if(startScrollNum.length>=roadMapArr.length-6){
+        n=roadMapArr.length-6  
+      }else{
+        n=startScrollNum.length-2;
+      }
+      this.scrollDistance=n*200;
+      ul.style.transform=`translateX(-${this.scrollDistance}px)` 
     },
     leftFN(){
       let ul=this.$refs.ul;
@@ -213,6 +244,14 @@ export default {
       ul{
         display: flex;
         transition: 1s;
+        li:nth-of-type(2n){
+            .year1{
+              padding:0 0 30px 30px;
+              text-align: left;
+              font-size: 36px;
+              color: #c6c6c6;
+            }
+        }
         .year{
           padding:0 30px 30px 0;
           padding-right: 30px;
@@ -220,19 +259,12 @@ export default {
           font-size: 36px;
           color: #c6c6c6;
         }
-        .year1{
-          padding:0 30px 30px 0;
-          text-align: left;
-          font-size: 36px;
-          color: #c6c6c6;
-        }
-        
       }
       .wrap{
         position: relative;
         .line{
           position: absolute;
-          right: 15px;
+          right: 0;
           top: 0;
           background-color: #eeeeee;
           width: 2px;
@@ -250,21 +282,26 @@ export default {
         li{
           width: 200px;
           h5{
+            padding-left:15px; 
             font-size: 36px;
           }
           .year2{
             margin: 16px 0;
+            padding-left:15px; 
             font-size: 18px;
           }
         }
       }
       .list1{
         display: flex;
-        .border{
+        .border0{
           border-top:2px solid #a6a6a6
         }
         .border1{
           border-top:2px solid #323232
+        }
+        .border2{
+          border-top:2px solid #1bdeb8
         }
         .month{
           color: #999999
@@ -283,7 +320,7 @@ export default {
             font-size: 18px;
           }
           p{
-            padding-top: 30px;
+            padding: 30px 15px 0 15px;
             font-size: 16px;
             color: #999999;
             line-height: 22px;
@@ -291,7 +328,7 @@ export default {
           .point{
             position: absolute;
             top: -3px;
-            left: -18px;
+            left: -3px;
             width: 4px;
             height: 4px;
             background-color: #a6a6a6;

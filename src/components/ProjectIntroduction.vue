@@ -12,7 +12,7 @@
         Therefore, in October 2018, the company took control of a pharmaceutica company(which was mainly engaged in the research and development and production of periplaneta Americana related products), took the pharmaceutical company as the first application scenario, and started the research and development of block chain traceability technology combined with production equipment and production line.
       </p>
       <h2>
-        <img src="../assets/download.png" alt="" srcset=""><span v-html="$t('message.downloadWhitePaper')">Download White Paper</span>
+        <img v-lazy="require('../assets/download.png')" alt="" srcset=""><span v-html="$t('message.downloadWhitePaper')">Download White Paper</span>
       </h2>
       <div class="btn">
         <a @click="downloadEnglish" v-html="$t('message.englishVersion')">English version</a><a @click="downloadChinese" v-html="$t('message.chineseVersion')">Chinese version</a>

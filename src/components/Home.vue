@@ -2,40 +2,25 @@
   <section >
     <div class="menus">
       <div class="wrap">
-        <img src="../assets/logo.png" alt="">
-        <ul>
-          <li v-for="(item,index) in menus">
-            <input type="radio" name="menu" :id="index" :checked="index===0?true:fasle">
-            <label :for="index">
-              {{item}}
-              <span></span>
-            </label>
-          </li>
-        </ul>
-        <div class="languase">
-          <input type="radio" name="lan" id="English" checked>
-          <label for="English" @click="switchLanguage(0)" v-html="$t('message.languangeEn')">English</label>
-          <em></em>
-          <input type="radio" name="lan" id="chinese">
-          <label for="chinese"  @click="switchLanguage(1)" v-html="$t('message.languangeCn')">chinese</label>
-        </div>
+        <vmenu></vmenu>
       </div>
     </div>
     <div class="seach">
       <input type="text">
       <a>
-        <img src="../assets/seach.png" alt="" srcset="">
+        <img v-lazy="require('../assets/seach.png')" alt="" srcset="">
       </a>
     </div>
     <el-carousel height="910px" class="carousel">
       <el-carousel-item v-for="item in scrollChart" >
-        <img :src="item" alt="" >
+        <img v-lazy="item" alt="" >
       </el-carousel-item>
     </el-carousel>
   </section>
 </template>
 
 <script>
+import Vmenu from "./Menu"
 export default {
   name: 'Home',
   data(){
@@ -43,31 +28,41 @@ export default {
       scrollChart:[
         require("../assets/scrollChart1.png"),
         require("../assets/scrollChart2.png"),
-        require("../assets/scrollChart3.png")
       ],
-      menus:[
-        this.$t('message.home'),
-        this.$t('message.whitePaper'),
-        this.$t('message.newsTitle')
-      ],
-      selectLan:0
+      n:-1
     }
   },
   mounted() {
+  },
+  computed:{
+    a:{
+      get(){
+        console.log(11)
+        this.n++
+        return this.$t('message.menuHome');
+      }
+    }
   },
   methods:{
     show(){
       
     },
-    switchLanguage(n){
-      this.$i18n.locale = n===0?'en':"cn"
-      this.$set(this.menus,0,this.$t('message.home'));
-      this.$set(this.menus,1,this.$t('message.whitePaper'));
-      this.$set(this.menus,2,this.$t('message.newsTitle'));
-    }
+    selectMenuFn(i){
+      this.selectMenu=i
+    },
   },
   watch:{
-   
+    a(){
+           //滚动图切换
+     this.scrollChart=this.n%2===0?[
+        require("../assets/scrollChart1.png"),
+        require("../assets/scrollChart2.png"),
+      ]:[require("../assets/scrollChart3.png"),
+        require("../assets/scrollChart4.png")]
+    }
+  },
+  components:{
+    Vmenu
   }
 }
 </script>
@@ -76,7 +71,8 @@ export default {
 <style scoped lang="less">
     section{
       position: relative;
-      height: 910px;
+      height: 912px;
+      overflow: hidden;
     }
     .wrap{
       width: 1200px;   
@@ -86,70 +82,10 @@ export default {
       display: flex;
       justify-content: center;
       .wrap{
-        display: flex;
         padding-top: 28px;
-        img{
-          margin-right: 70px;
-        }
-        ul{
-          width:630px;
-          display: flex;
-          li{
-            position: relative;
-            flex: 1;
-            margin: 0 35px;
-            height: 54px;
-            line-height: 54px;
-            color: white;
-            font-size: 22px;
-            label{
-              cursor: pointer;
-              display: block;
-            }
-            span{
-              display: none;
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              margin: auto;
-              width: 14px;
-              height: 2px;
-              background-color:#1bdeb8;
-            }
-              
-              input:checked+label{
-                color: #1bdeb8;
-                span{
-                  display: block;
-                }
-              }
-          }
-        }
-        .languase{
-          height: 54px;
-          line-height: 54px;
-          label{
-            padding: 0 14px;
-            color: #72777c;
-          }
-          input:checked+label{
-             color: #1bdeb8;
-          }
-          em{
-            display: inline-block;
-            height: 12px;
-            width: 2px;
-            background-color: white;
-          }
-        }
+        position: relative;
+        z-index: 100;
       }
-      input{
-        display: none;
-      }
-      text-align: center;
-      position: relative;
-      z-index: 100;
     }
     .seach{
       width: 400px;
@@ -192,7 +128,7 @@ export default {
       z-index: 1;
       img{
         width: 100%;
-        height: 100%;
+        height: 910px;
       } 
     }
 </style>

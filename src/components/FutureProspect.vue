@@ -172,11 +172,11 @@ export default {
             }else{
               y1=y+h/2+4
             }
-            ctx.font="16px Georgia";
             x1=(w-ctx.measureText(txt[i]).width)/2+x;
             ctx.beginPath();
             ctx.textBaseline="center";
             ctx.fillStyle=c;
+            ctx.font="14px Arial";
             ctx.fillText(txt[i],x1,y1);
             ctx.closePath();  
          } 
